@@ -1,0 +1,1 @@
+INSERT INTO `trip_consent` (`name`, `class`, `roll_number`, `section`, `parent_name`, `number`, `alternate_number`, `conditions`, `relationship`, `consent`, `parent_sign`, `student_sign`, `date`) VALUES ('Ravi', '10th', '123435', 'A', 'My mom', '1234567890', '1234567890', 'psoriasis, allergy with smoke', 'mother', '1', 0x889e9cfef1, 114500009, current_timestamp());

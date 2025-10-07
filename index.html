@@ -1,0 +1,149 @@
+<!-- field-trip-permission-form.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Consent Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-wrap" role="main">
+    <div class="form-header">
+      <div class="logo">FT</div>
+      <div>
+        <h1>Field Trip Permission Form</h1>
+        <p class="lead">Complete this form to grant permission for your child to participate in the trip. Fields marked <span class="required">*</span> are required.</p>
+      </div>
+    </div>
+
+    <form action="submit.php" method="post" enctype="multipart/form-data">
+      <div class="section-title">Student Information</div>
+      <div class="grid">
+        <div>
+          <label for="student_name">Student Full Name <span class="required">*</span></label>
+          <input id="student_name" name="student_name" type="text" placeholder="e.g. Ananya Sharma" required>
+        </div>
+
+        <div>
+          <label for="grade">Grade / Class <span class="required">*</span></label>
+          <input id="grade" name="grade" type="text" placeholder="e.g. 10th " required>
+        </div>
+
+        <div>
+          <label for="roll">Roll Number<span class="required">*</span></label>
+          <input id="roll" name="roll" type="text" placeholder="School roll or ID" required>
+        </div>
+
+        <div>
+          <label for="section">Section<span class="required">*</span></label>
+          <input id="section" name="section" type="text" placeholder="e.g. B" required>
+        </div>
+
+        <!-- <div class="full">
+          <label for="destination">Trip Destination / Purpose</label>
+          <input id="destination" name="destination" type="text" placeholder="e.g. Science Museum visit">
+        </div> -->
+      </div>
+
+      <div class="section-title">Parent / Guardian & Emergency Contact</div>
+      <div class="grid">
+        <div>
+          <label for="guardian_name">Parent / Guardian Name <span class="required">*</span></label>
+          <input id="guardian_name" name="guardian_name" type="text" placeholder="e.g. Ravi Kumar" required>
+        </div>
+
+        <div>
+          <label for="guardian_phone">Contact Number <span class="required">*</span></label>
+          <input id="guardian_phone" name="guardian_phone" type="tel" placeholder="+91 98XXXXXXXX" required>
+        </div>
+
+        <div>
+          <label for="alt_contact">Alternate Contact</label>
+          <input id="alt_contact" name="alt_contact" type="tel" placeholder="Emergency contact number">
+        </div>
+
+        <div>
+          <label for="relationship">Relationship</label>
+          <input id="relationship" name="relationship" type="text" placeholder="e.g. Mother / Family friend">
+        </div>
+      </div>
+
+      <div class="section-title">Health & Special Instructions</div>
+      <div class="grid">
+        <div class="full">
+          <label for="medical">Medical Conditions / Allergies</label>
+          <textarea id="medical" name="medical" placeholder="List any allergies, medication, or special needs"></textarea>
+          <p class="inline-help">If none, type "None".</p>
+        </div>
+
+        <!-- <div>
+          <label for="med_permission">Medication at School</label>
+          <select id="med_permission" name="med_permission">
+            <option value="">-- Select --</option>
+            <option value="administer">Administer as prescribed</option>
+            <option value="no_admin">Do not administer</option>
+            <option value="self">Student will self-manage</option>
+          </select>
+        </div> -->
+
+        <!-- <div>
+          <label for="diet">Dietary Restrictions</label>
+          <input id="diet" name="diet" type="text" placeholder="e.g. Vegetarian / No nuts">
+        </div> -->
+      </div>
+
+      <div class="section-title">Permission & Consents</div>
+      <div class="grid">
+        <div class="full">
+          <div class="consents">
+            <label class="checkbox"><input type="checkbox" name="consent_travel" required> I give permission for my child to participate in the trip. <span class="required">*</span></label>
+
+            <label class="checkbox"><input type="checkbox" name="consent_death" required> If anything happens to the child, the school is not responsible. <span class="required">*</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">Signatures</div>
+      <div class="grid">
+        <div>
+          <label for="parent_signature">Parent / Guardian Signature (upload image) <span class="required">*</span></label>
+          <input id="parent_signature" name="parent_sign" type="file" accept="image/png, image/jpeg" required>
+          <p class="inline-help">Upload a clear photo or scan of signature (JPG/PNG).</p>
+        </div>
+
+        <div>
+          <label for="student_signature">Student Signature (upload image) <span class="required">*</span></label>
+          <input id="student_signature" name="student_sign" type="file" accept="image/png, image/jpeg" required>
+          <p class="inline-help">Upload student’s digital signature (JPG/PNG).</p>
+        </div>
+
+        
+
+        <div>
+          <label for="date">Date <span class="required">*</span></label>
+          <input id="date" name="date" type="date" required>
+        </div>
+
+        <div class="full">
+          <p class="note">By uploading your digital signatures and submitting this form, you confirm the authenticity of the signatures and consent to the stated permissions.</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="reset" class="btn btn-ghost">Reset</button>
+        <button type="submit" class="btn btn-primary">Submit Permission</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+  // Auto-fill today's date in the date input
+  document.addEventListener("DOMContentLoaded", () => {
+    const dateInput = document.getElementById("date");
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.value = today;
+  });
+</script>
+</body>
+</html>
